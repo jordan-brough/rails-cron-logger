@@ -22,4 +22,8 @@ Example:
 
     1 * * * * rails runner '$stdout.sync = true; <your code here>'
 
-Setting `$stdout.sync = true` in this gem seems like it would be a bit overreaching.
+Setting `$stdout.sync = true` in this gem seems a bit overreaching, but for convenience if you pass `:sync => true` to Logger.new then rails-cron-logger will perform this step for you.
+
+Example:
+
+    logger = RailsCronLogger::Logger.new(:sync => true)
