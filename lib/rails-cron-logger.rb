@@ -13,7 +13,9 @@ module RailsCronLogger
         $stdout.sync = true
       end
 
-      logdev = if Rails.env.test?
+      logdev = if options[:logdev].present?
+                 options[:logdev]
+               elsif Rails.env.test?
                  # don't want log messages for tests mixed in with test output
                  Rails.application.config.paths.log.first
                else
