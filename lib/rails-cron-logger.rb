@@ -17,7 +17,7 @@ module RailsCronLogger
                  options[:logdev]
                elsif Rails.env.test?
                  # don't want log messages for tests mixed in with test output
-                 Rails.application.config.paths.log.first
+                 Rails.application.config.paths['log'].first
                else
                  $stdout
                end
